@@ -32,7 +32,8 @@ Apply Terraform Plan
 ```bash
   export REGION={AWS-REGION}
   export ENV={DESIRED-ENV}
-  terraform destroy -var='region=$REGION' -var='environment=$ENV'
+  terraform init
+  terraform apply -var='region=$REGION' -var='environment=$ENV'
 ```
 
 
