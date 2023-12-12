@@ -1,0 +1,24 @@
+resource_types:
+  - name: registry-image
+    type: registry-image
+    source:
+      repository: concourse/registry-image-resource
+      tag: latest
+resources:
+  - name: image-upload-lambda
+    type: git
+    icon: github-circle
+    source:
+      branch: main
+      uri: https://github.com/Spheny1/JasperHealth-Takehome-assesment.git
+jobs:
+  - name: build-lambda
+    plan:
+      - get: image-upload-lambda
+        trigger: true
+      - task: build-artifact
+        file: image-upload-lambda/ci/tasks/cargo-lambda-build.yaml
+        input_mapping:
+          code: image-upload-lambda
+
+
