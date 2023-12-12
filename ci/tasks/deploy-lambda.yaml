@@ -9,7 +9,7 @@ inputs:
 run:
   path: sh
   args:
-    - c
+    - -c
     - |
      cd code
      terraform init
