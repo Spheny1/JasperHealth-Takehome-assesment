@@ -43,6 +43,6 @@ Apply Terraform Plan
 This project was slated to take 2-3 hours and I am content with the project as is. Given more time here are some improvements I would make  
 1. Currently the Api Gateway is only checking for the user-agent that is forwaded by the CloudFront distribution a more secure solution would be to have the custom header whose value could be stored in Secrets Manager and  be rotated on a schedule. Then, create a Lambda Authorizer function to check for this value in Secrets Manager and authorize the request that way.
 2. Setting up shared resources to reuse resources such as IAM Roles and the Api Gateway. Currently this will deploy a new Api Gateway based on the environment parameter given a more DRY solution could be to reuse the Gateway and have a new deployment based on the environment specified.
-3. Setup Concourse CICD pipeline. I do not have it deployed/setup locally if time permits maybe Ill get this added before the interview.
+3. Starting with Terragrunt. I typically use Terragrunt at work but I figured this would be a good chance to try out just Terraform and see the difference. This was a mistake as when creating automation pipelines Terragrunt does a good job of managing remote state so even if my pipeline build the infrastructure, locally I could still destroy it.
 
 
