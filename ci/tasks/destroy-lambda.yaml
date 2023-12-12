@@ -13,4 +13,4 @@ run:
     - |
      cd code
      terraform init
-     terraform  -var="region=$REGION" -var="environment=$ENV" -auto-approve
+     terraform destroy -var="region=$REGION" -var="environment=$ENV" -auto-approve
