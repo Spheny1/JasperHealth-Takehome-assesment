@@ -2,7 +2,7 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: ghcr.io/cargo-lambda/cargo-lambda
+    repository: ghcr.io/cargo-lambda/cargo-lambda:1.0.0
 inputs:
   - name: code
 outputs:
