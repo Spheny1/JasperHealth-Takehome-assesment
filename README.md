@@ -33,7 +33,7 @@ Apply Terraform Plan
   export REGION={AWS-REGION}
   export ENV={DESIRED-ENV}
   terraform init
-  terraform apply -var='region=$REGION' -var='environment=$ENV'
+  terraform apply -var="region=$REGION" -var="environment=$ENV"
 ```
 
 
