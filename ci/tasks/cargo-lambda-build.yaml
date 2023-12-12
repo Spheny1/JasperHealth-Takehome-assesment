@@ -1,6 +1,6 @@
 platform: linux
 image_resource:
-  type: docker-image
+  type: registry-image
   source:
     repository: ghcr.io/cargo-lambda/cargo-lambda:1.0.0
 inputs:
