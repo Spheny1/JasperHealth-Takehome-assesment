@@ -20,5 +20,18 @@ jobs:
         file: image-upload-lambda/ci/tasks/cargo-lambda-build.yaml
         input_mapping:
           code: image-upload-lambda
+  - name: deploy-lambda-and-architecture
+    plan:
+      - get: image-upload-lambda
+      - get: artifacts
+      - task: deploy-with-terraform
+        file: image-upload-lambda/ci/tasks/deploy-lambda.yaml
+        input_mapping:
+          artifact: artifacts
+          code: image-upload-lambda
+        params:
+          #DO NOT CHECK THIS IN WITH VALUES
+          AWS_ACCESS_KEY_ID: abcd
+          AWS_SECRET_ACCESS_KEY: efgh
 
 

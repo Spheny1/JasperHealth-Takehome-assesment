@@ -15,4 +15,3 @@ run:
     cd code/lambda
     cargo lambda build --release --output-format zip
     mv target/lambda/fakeS3Upload/bootstrap.zip ../../artifacts/
-

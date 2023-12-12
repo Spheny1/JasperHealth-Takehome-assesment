@@ -44,7 +44,7 @@ resource "aws_lambda_function" "image_upload_to_s3"{
 	function_name = "image_upload_to_s3-${var.environment}"
 	role = aws_iam_role.iam_image_upload_to_s3.arn
 	runtime = "provided.al2"
-	filename = "${path.module}/lambda/target/lambda/fakeS3Upload/bootstrap.zip"
+	filename = "${path.module}/${var.path_to_zip}/bootstrap.zip"
 	handler = "hello.handler"
 }
 
