@@ -13,5 +13,5 @@ run:
     - |
      cd code
      terraform init
-     terraform apply -var='region=$REGION' -var='environment=$ENV' -var='path_to_zip=../artifacts'
+     terraform apply -var="region=$REGION" -var="environment=$ENV" -var='path_to_zip=../artifacts'
 
