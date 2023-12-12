@@ -11,6 +11,11 @@ resources:
     source:
       branch: main
       uri: https://github.com/Spheny1/JasperHealth-Takehome-assesment.git
+  - name: daily
+    type: time
+    check_every: 24h
+    source:
+      interval: 24h
 jobs:
   - name: build-and-deploy-lambda
     plan:
@@ -28,6 +33,10 @@ jobs:
         params:
           #DO NOT CHECK THIS IN WITH VALUES
           AWS_ACCESS_KEY_ID: abcd
-          AWS_SECRET_ACCESS_KEY: efgh
+          AWS_SECRET_ACCESS_KEY: efg
+          REGION: us-east-1
+          ENV: dev
+
+
 
 
