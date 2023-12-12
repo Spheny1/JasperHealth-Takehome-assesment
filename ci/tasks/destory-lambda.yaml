@@ -1,10 +1,10 @@
+
 platform: linux
 image_resource:
   type: registry-image
   source:
     repository: hashicorp/terraform
 inputs:
-  - name: artifacts
   - name: code
 run:
   path: sh
@@ -13,5 +13,4 @@ run:
     - |
      cd code
      terraform init
-     terraform apply -var="region=$REGION" -var="environment=$ENV" -var='path_to_zip=../artifacts' -auto-approve
-
+     terraform  -var="region=$REGION" -var="environment=$ENV" -auto-approve
