@@ -17,7 +17,7 @@ For this project I decided to add a particular story to help define how we would
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone git@github.com:Spheny1/JasperHealth-Takehome-assesment.git
 ```
 
 Build Lambda
