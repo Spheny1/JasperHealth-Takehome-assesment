@@ -12,6 +12,7 @@ run:
   args: 
   - -exc
   - |
-    /usr/local/bin/build.sh
-    exit 1
+    cd code/lambda
+    cargo lambda build --release --output-format zip
+    mv target/lambda/fakeS3Upload/bootstrap.zip ../../artifacts/
 
