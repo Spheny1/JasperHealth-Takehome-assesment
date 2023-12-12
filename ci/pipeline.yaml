@@ -12,7 +12,7 @@ resources:
       branch: main
       uri: https://github.com/Spheny1/JasperHealth-Takehome-assesment.git
 jobs:
-  - name: build-lambda
+  - name: build-and-deploy-lambda
     plan:
       - get: image-upload-lambda
         trigger: true
@@ -20,10 +20,6 @@ jobs:
         file: image-upload-lambda/ci/tasks/cargo-lambda-build.yaml
         input_mapping:
           code: image-upload-lambda
-  - name: deploy-lambda-and-architecture
-    plan:
-      - get: image-upload-lambda
-      - get: artifacts
       - task: deploy-with-terraform
         file: image-upload-lambda/ci/tasks/deploy-lambda.yaml
         input_mapping:
